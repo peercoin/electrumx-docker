@@ -1,0 +1,37 @@
+version: '3.5'
+services:
+  peercoind:
+    image: peerchemist/peercoind
+    restart: always
+    environment:
+      - RPC_USER=USER
+      - RPC_PASSWORD=PASS
+    volumes:
+      - type: bind
+        source: /opt/electrum/peercoin/
+        target: /data
+    command:
+      -nominting
+      -rpcallowip=*
+      -printtoconsole
+  electrumx:
+    image: electrumx
+    environment:
+      - DAEMON_URL=USER:PASS@peercoind
+      - COIN=Peercoin
+      - DB_DIRECTORY=/data
+      - TCP_PORT=50001
+      - SSL_PORT=50002
+      - RPC_PORT=18800
+      - CACHE_MB=400
+    volumes:
+      - type: bind
+        source: /opt/electrum/db/
+        target: /data
+    ports:
+      - "50001" # comment out to disable TCP port (plaintext)
+#      - "50002"
+      - "18800"
+    restart: always
+    depends_on:
+      - peercoind
