@@ -22,7 +22,6 @@ services:
       - DB_DIRECTORY=/data
       - TCP_PORT=50001
       - SSL_PORT=50002
-      - RPC_PORT=18800
       - CACHE_MB=400
     volumes:
       - type: bind
