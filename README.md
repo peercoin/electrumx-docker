@@ -8,6 +8,8 @@ An easily configurable Docker image for running an Electrum server.
 
 ## Run
 
+> mkdir -p  /opt/electrum/{peercoin,db}
+
 > docker-compose up -d
 
 or
