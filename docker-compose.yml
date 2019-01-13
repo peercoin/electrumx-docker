@@ -30,7 +30,6 @@ services:
     ports:
       - "50001" # comment out to disable TCP port (plaintext)
 #      - "50002"
-      - "18800"
     restart: always
     depends_on:
       - peercoind
