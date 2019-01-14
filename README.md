@@ -8,6 +8,8 @@ An easily configurable Docker image for running an Electrum server.
 
 ## Run
 
+Make sure your local docker and docker-compose installation can handle docker-compose syntax `3.5`. This basically means: "run latest code".
+
 > mkdir -p  /opt/electrum/{peercoin,db}
 
 > docker-compose up -d
