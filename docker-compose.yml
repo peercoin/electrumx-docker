@@ -23,13 +23,17 @@ services:
       - TCP_PORT=50001
       - SSL_PORT=50002
       - CACHE_MB=400
+      - RPC_HOST=127.0.0.1
+      - HOST=
+      - RPC_PORT=58000
     volumes:
       - type: bind
         source: /opt/electrum/db/
         target: /data
     ports:
-      - "50001" # comment out to disable TCP port (plaintext)
-#      - "50002"
+      - "50001:50001" # comment out to disable TCP port (plaintext)
+      - "50002:50002"
+      - "58000:58000"
     restart: always
     depends_on:
       - peercoind
