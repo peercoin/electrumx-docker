@@ -15,7 +15,7 @@ services:
       -rpcallowip=*
       -printtoconsole
   electrumx:
-    image: electrumx
+    image: peerchemist/electrumx
     environment:
       - DAEMON_URL=USER:PASS@peercoind
       - COIN=Peercoin
