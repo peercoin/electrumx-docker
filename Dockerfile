@@ -2,7 +2,7 @@ FROM python:3.7-alpine3.7
 LABEL maintainer="The Peerchemist <peerchemist@protonmail.ch>"
 # based on work by lukechilds, https://github.com/lukechilds/docker-electrumx/blob/master/bin/init
 
-ENV _VERSION=1.9.3
+ENV _VERSION=1.11.0
 
 COPY ./bin /usr/local/bin
 RUN wget -q -O electrumx.tar.gz https://github.com/kyuupichan/electrumx/archive/${_VERSION}.tar.gz
@@ -12,7 +12,7 @@ WORKDIR /electrumx-${_VERSION}
 
 RUN chmod a+x /usr/local/bin/* && \
     apk add --no-cache git build-base openssl && \
-    apk add --no-cache --repository http://nl.alpinelinux.org/alpine/edge/testing leveldb-dev && \
+    apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community leveldb-dev && \
     pip install aiohttp pylru plyvel && \
     python setup.py install && \
     apk del git build-base && \
