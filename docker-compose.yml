@@ -20,12 +20,9 @@ services:
       - DAEMON_URL=USER:PASS@peercoind
       - COIN=Peercoin
       - DB_DIRECTORY=/data
-      - TCP_PORT=50001
-      - SSL_PORT=50002
       - CACHE_MB=400
-      - RPC_HOST=127.0.0.1
-      - HOST=
-      - RPC_PORT=58000
+      - SERVICES=tcp://:50001,ssl://:50002,wss://:50004,rpc://
+      - DONATION_ADDRESS=p92W3t7YkKfQEPDb7cG9jQ6iMh7cpKLvwK 
     volumes:
       - type: bind
         source: /opt/electrum/db/
@@ -33,7 +30,7 @@ services:
     ports:
       - "50001:50001" # comment out to disable TCP port (plaintext)
       - "50002:50002"
-      - "58000:58000"
+      - "50004:50004"
     restart: always
     depends_on:
       - peercoind
