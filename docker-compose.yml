@@ -21,7 +21,8 @@ services:
       - COIN=Peercoin
       - DB_DIRECTORY=/data
       - CACHE_MB=400
-      - SERVICES=tcp://:50001,ssl://:50002,wss://:50004,rpc://
+      - SERVICES=tcp://:50001,ssl://:50002,wss://:50004,rpc://0.0.0.0:8000
+      - HOST=""
       - DONATION_ADDRESS=p92W3t7YkKfQEPDb7cG9jQ6iMh7cpKLvwK 
     volumes:
       - type: bind
@@ -31,6 +32,7 @@ services:
       - "50001:50001" # comment out to disable TCP port (plaintext)
       - "50002:50002"
       - "50004:50004"
+      - "8000:8000"
     restart: always
     depends_on:
       - peercoind
