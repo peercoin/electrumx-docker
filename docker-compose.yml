@@ -12,7 +12,6 @@ services:
         target: /data
     command:
       -nominting
-      -rpcallowip=*
       -printtoconsole
   electrumx:
     image: peerchemist/electrumx
@@ -22,7 +21,6 @@ services:
       - DB_DIRECTORY=/data
       - CACHE_MB=400
       - SERVICES=tcp://:50001,ssl://:50002,wss://:50004,rpc://0.0.0.0:8000
-      - HOST=""
       - DONATION_ADDRESS=p92W3t7YkKfQEPDb7cG9jQ6iMh7cpKLvwK 
     volumes:
       - type: bind
