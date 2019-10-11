@@ -1,7 +1,7 @@
 version: '3.5'
 services:
   peercoind:
-    image: peerchemist/peercoind
+    image: peercoin/peercoind
     restart: always
     environment:
       - RPC_USER=USER
