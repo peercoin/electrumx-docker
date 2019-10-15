@@ -14,7 +14,7 @@ services:
       -nominting
       -printtoconsole
   electrumx:
-    image: peerchemist/electrumx
+    image: peercoin/electrumx
     environment:
       - DAEMON_URL=USER:PASS@peercoind
       - COIN=Peercoin
