@@ -1,8 +1,8 @@
 
 # electrumx-docker
 
-[![Image Layers](https://images.microbadger.com/badges/image/peerchemist/electrumx.svg)](https://microbadger.com/images/peerchemist/electrumx)
-[![Docker Pulls](https://img.shields.io/docker/pulls/peerchemist/electrumx.svg)](https://hub.docker.com/r/peerchemist/electrumx/)
+[![Image Layers](https://images.microbadger.com/badges/image/peercoin/electrumx.svg)](https://microbadger.com/images/peercoin/electrumx)
+[![Docker Pulls](https://img.shields.io/docker/pulls/peercoin/electrumx.svg)](https://hub.docker.com/r/peercoin/electrumx/)
 
 An easily configurable Docker image for running an Electrum server.
 
@@ -22,7 +22,7 @@ docker run \
   -e DAEMON_URL=user:pass@host \
   -e COIN=Peercoin \
   -p 50002:50002 \
-  peerchemist/electrumx
+  peercoin/electrumx
 ```
 
 ## Tweak
