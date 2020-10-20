@@ -1,4 +1,4 @@
-FROM python:3.7-alpine3.10
+FROM python:3.7-alpine3.11
 LABEL maintainer="The Peerchemist <peerchemist@protonmail.ch>"
 # based on work by lukechilds, https://github.com/lukechilds/docker-electrumx/
 
