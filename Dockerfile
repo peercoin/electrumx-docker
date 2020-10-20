@@ -2,7 +2,7 @@ FROM python:3.7-alpine3.10
 LABEL maintainer="The Peerchemist <peerchemist@protonmail.ch>"
 # based on work by lukechilds, https://github.com/lukechilds/docker-electrumx/
 
-ENV _VERSION=1.13.0
+ENV _VERSION=1.15.0
 
 COPY ./bin /usr/local/bin
 RUN wget -q -O electrumx.tar.gz https://github.com/kyuupichan/electrumx/archive/${_VERSION}.tar.gz
