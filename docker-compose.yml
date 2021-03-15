@@ -1,7 +1,7 @@
 version: '3.5'
 services:
   peercoind:
-    image: peercoin/peercoind
+    image: peercoin/peercoind:latest
     restart: always
     environment:
       - RPC_USER=USER
@@ -14,7 +14,7 @@ services:
       -nominting
       -printtoconsole
   electrumx:
-    image: peercoin/electrumx
+    image: peercoin/electrumx:latest
     environment:
       - DAEMON_URL=USER:PASS@peercoind
       - COIN=Peercoin

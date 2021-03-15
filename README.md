@@ -30,4 +30,4 @@ docker run \
 Edit "environment" sections of `peercoind` and `electrumx` in `docker-compose.yml` to setup the ElectrumX daemon.
 Note: Your electrumx DAEMON_URL **must** end in `@peercoind` e. g. `DAEMON_URL=USER:PASS@peercoind`
 
-You can view all ElectrumX environment variables here: https://github.com/kyuupichan/electrumx/blob/master/docs/environment.rst
+You can view all ElectrumX environment variables here: https://github.com/spesmilo/electrumx/blob/master/docs/environment.rst

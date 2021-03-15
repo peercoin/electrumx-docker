@@ -1,11 +1,11 @@
-FROM python:3.7-alpine3.11
+FROM python:3.8-alpine3.12
 LABEL maintainer="The Peerchemist <peerchemist@protonmail.ch>"
 # based on work by lukechilds, https://github.com/lukechilds/docker-electrumx/
 
-ENV _VERSION=1.15.0
+ENV _VERSION=1.16.0
 
 COPY ./bin /usr/local/bin
-RUN wget -q -O electrumx.tar.gz https://github.com/kyuupichan/electrumx/archive/${_VERSION}.tar.gz
+RUN wget -q -O electrumx.tar.gz https://github.com/spesmilo/electrumx/archive/${_VERSION}.tar.gz
 RUN tar -xzf electrumx.tar.gz
 
 WORKDIR /electrumx-${_VERSION}
