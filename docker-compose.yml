@@ -11,6 +11,7 @@ services:
         source: /opt/electrum/peercoin/
         target: /data
     command:
+      -rpcbind=0.0.0.0
       -nominting
       -printtoconsole
   electrumx:
