@@ -8,7 +8,7 @@ services:
       - RPC_PASSWORD=PASS
     volumes:
       - type: bind
-        source: /opt/electrum/peercoin/
+        source: ./.peercoin
         target: /data
     command:
       -rpcbind=0.0.0.0
@@ -25,7 +25,7 @@ services:
       - DONATION_ADDRESS=p92W3t7YkKfQEPDb7cG9jQ6iMh7cpKLvwK 
     volumes:
       - type: bind
-        source: /opt/electrum/db/
+        source: .electrum
         target: /data
     ports:
       - "50001:50001" # comment out to disable TCP port (plaintext)
