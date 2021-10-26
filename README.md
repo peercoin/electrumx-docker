@@ -6,6 +6,10 @@
 
 An easily configurable Docker image for running an Electrum server.
 
+## Build locally (optional)
+
+> docker build --no-cache -t electrumx:latest .
+
 ## Run
 
 Make sure your local docker and docker-compose installation can handle docker-compose syntax `3.5`. This basically means: "run latest code".
