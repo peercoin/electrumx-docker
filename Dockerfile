@@ -1,8 +1,8 @@
-FROM python:3.8-alpine3.12
+FROM python:3.9-alpine3.16
 LABEL maintainer="The Peerchemist <peerchemist@protonmail.ch>"
 # based on work by lukechilds, https://github.com/lukechilds/docker-electrumx/
 
-ENV _VERSION=1.17.0
+ENV _VERSION=1.17.3
 
 COPY ./bin /usr/local/bin
 RUN wget -q -O electrumx.tar.gz https://github.com/peerchemist/electrumx/archive/${_VERSION}.tar.gz
@@ -12,8 +12,8 @@ WORKDIR /electrumx-${_VERSION}
 
 RUN chmod a+x /usr/local/bin/* && \
     apk add --no-cache build-base openssl && \
-    apk add --no-cache --repository http://nl.alpinelinux.org/alpine/edge/community leveldb-dev && \
-    apk add --no-cache --repository http://nl.alpinelinux.org/alpine/edge/testing rocksdb-dev && \
+    apk add --no-cache leveldb-dev && \
+    apk add --no-cache rocksdb-dev && \
     pip install aiohttp pylru plyvel websockets python-rocksdb && \
     python setup.py install && \
     rm -rf /var/cache/apk/* && \
