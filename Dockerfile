@@ -14,7 +14,7 @@ RUN chmod a+x /usr/local/bin/* && \
     apk add --no-cache build-base openssl && \
     apk add --no-cache leveldb-dev && \
     apk add --no-cache rocksdb-dev && \
-    pip install aiohttp pylru plyvel websockets python-rocksdb && \
+    pip install aiohttp pylru plyvel websockets && \
     python setup.py install && \
     rm -rf /var/cache/apk/* && \
     apk del build-base && \
